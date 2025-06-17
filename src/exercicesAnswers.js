@@ -1,4 +1,3 @@
-
 //Exercice 1 : Donner la taille de la chaîne de caractères.
 let stringLength = function (sentence) {
   let taille = sentence.length
@@ -19,7 +18,7 @@ let concatenateSentences = function (firstSentence, secondSentence) {
 
 //Exercice 4 : Afficher le cinquième caractère de la chaîne.
 let displayFifthCharacter = function (sentence) {
-  let caractère = sentence.charAt(4)
+  let caractère = sentence[4]
   return caractère
 }
 
@@ -55,6 +54,9 @@ let isString = function (sentence) {
     vraiOuFaux = false
   }
   return vraiOuFaux
+
+  // OU 
+  // return typeof sentence === 'string' ? true : false
 }
 
 //Exercice 10 : Afficher l'extension du fichier.
@@ -68,6 +70,8 @@ let displayExtension = function (fileName) {
 //Exercice 11 : Compter le nombre d'espace dans la chaîne.
 let countSpaces = function (sentence) {
   esp = sentence.split(' ').length - 1
+  // ou
+  // sentence.match(/ /g).length
   return esp
 }
 
@@ -80,12 +84,10 @@ let invertSentence = function (sentence) {
 //Exercice 13 : Chercher si dans la chaîne de caractère se trouve "Afpa".
 let searchInSentence = function (sentence) {
   let resultat = sentence.indexOf("Afpa")
-  if (resultat > -1) {
-    vraiOuFaux = true
-  } else {
-    vraiOuFaux = false
-  }
+  resultat > -1 ? vraiOuFaux = true : vraiOuFaux = false
   return vraiOuFaux
+  // ou
+  // sentence.include('Afpa')
 }
 
 //Exercice 14 : Afficher la valeur absolue d'un nombre.
@@ -100,11 +102,13 @@ let displayAbsoluteValues = function (numbersArray) {
     return Math.abs(element);
   });
   return absolues
+  // ou 
+  // numbersArray.map(Math.abs)
 }
 
 //Exercice 16 : Calculer la surface d'un cercle en fonction de son rayon. L'arrondir à l'entier le plus proche.
 let calculateArea = function (radius) {
-  surface = 3.14 * (radius ** 2) + 1
+  surface = Math.PI * (radius ** 2)
   surface = Math.round(surface)
   return surface
 }
